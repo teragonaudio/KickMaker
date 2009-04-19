@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/packages/!svn/ver/1/trunk/terafx/source/Gains
+END
+fxGainMeasure.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxGainMeasure.cpp
+END
+fxAmplitudeCompressor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxAmplitudeCompressor.cpp
+END
+fxCompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxCompressor.h
+END
+fxGainMeasure.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxGainMeasure.h
+END
+fxLimiter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxLimiter.cpp
+END
+fxOverdrive.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxOverdrive.cpp
+END
+fxAmplitudeCompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxAmplitudeCompressor.h
+END
+fxHighpoint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxHighpoint.cpp
+END
+fxLimiter.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxLimiter.h
+END
+fxOverdrive.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxOverdrive.h
+END
+fxCompressor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxCompressor.cpp
+END
+fxHighpoint.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/packages/!svn/ver/1/trunk/terafx/source/Gains/fxHighpoint.h
+END

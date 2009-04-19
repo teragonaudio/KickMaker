@@ -253,6 +253,12 @@ enum {
 #define NUM_INPUTS 0
 #define NUM_OUTPUTS 2
 
+// PluginCore features
+#define USE_PC_EVENTS 1
+#define USE_PC_PRESET 1
+#define USE_PC_MIDI 1
+#define USE_PC_EFFECTS 1
+
 #ifdef USE_PC_AU
 #define KickMaker_COMP_SUBTYPE 'KkMk'
 #define KickMaker_COMP_MANF 'Tera'

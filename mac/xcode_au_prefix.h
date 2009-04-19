@@ -5,8 +5,6 @@
 #define QUARTZ 1
 #define TARGET_API_MAC_CARBON 1
 #define USENAVSERVICES 1
-#define MAC_OS_X_VERSION_MIN_REQUIRED   1020
-#define MAC_OS_X_VERSION_MAX_ALLOWED	1030
 
 #if __ppc__
 #define VST_FORCE_DEPRECATED 0
@@ -24,3 +22,9 @@
 #include <AudioUnit/AudioUnit.h>
 #include <AvailabilityMacros.h>
 #include "vstgui.h"
+
+#define USE_PC_AU 1
+
+#ifndef __defaults_h__
+#include "defaults.h"
+#endif

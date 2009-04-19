@@ -10,6 +10,10 @@
 #ifndef __KickMakerCore_H
 #define __KickMakerCore_H
 
+#ifndef __defaults_H
+#include "defaults.h"
+#endif
+
 #ifndef __pluginCore_H
 #include "pluginCore.h"
 #endif
@@ -19,35 +23,31 @@
 #endif
 
 #ifndef __fxADSR_H
-#include "Envelopes/fxADSR.h"
+#include "effects/Envelopes/fxADSR.h"
 #endif
 
 #ifndef __fxLopassFilter_H
-#include "Filters/fxLopassFilter.h"
+#include "effects/Filters/fxLopassFilter.h"
 #endif
 
 #ifndef __fxJumpCutter_H
-#include "Envelopes/fxJumpCutter.h"
+#include "effects/Envelopes/fxJumpCutter.h"
 #endif
 
 #ifndef __fxSelectWave_H
-#include "Waveforms/fxSelectWave.h"
+#include "effects/Waveforms/fxSelectWave.h"
 #endif
 
 #ifndef __fxLFO_H
-#include "Waveforms/fxLFO.h"
+#include "effects/Waveforms/fxLFO.h"
 #endif
 
 #ifndef __fxAmplitudeCompressor_H
-#include "Gains/fxAmplitudeCompressor.h"
+#include "effects/Gains/fxAmplitudeCompressor.h"
 #endif
 
 #ifndef __fxWhiteNosie_H
-#include "Misc/fxWhiteNoise.h"
-#endif
-
-#ifndef __defaults_H
-#include "defaults.h"
+#include "effects/Misc/fxWhiteNoise.h"
 #endif
 
 #ifndef __KickMakerEditor_H

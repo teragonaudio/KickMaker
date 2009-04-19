@@ -122,7 +122,9 @@ class KickMakerEditor : public AEffGUIEditor, public CControlListener {
     void switch2();
     void updateDisplay();
     
+#if USE_PC_EVENTS
     eventManager m_events;
+#endif
     std::vector<struct tCoords> m_coordmap;
     void *m_window;
     

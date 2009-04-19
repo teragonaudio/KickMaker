@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/packages/!svn/ver/1/trunk/terafx/source/Envelopes
+END
+fxMultipointInterpolation.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/packages/!svn/ver/1/trunk/terafx/source/Envelopes/fxMultipointInterpolation.h
+END
+fxJumpCutter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/packages/!svn/ver/1/trunk/terafx/source/Envelopes/fxJumpCutter.cpp
+END
+fxJumpCutter.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/packages/!svn/ver/1/trunk/terafx/source/Envelopes/fxJumpCutter.h
+END
+fxADSR.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/packages/!svn/ver/1/trunk/terafx/source/Envelopes/fxADSR.cpp
+END
+fxMultipointInterpolation.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/packages/!svn/ver/1/trunk/terafx/source/Envelopes/fxMultipointInterpolation.cpp
+END
+fxADSR.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/packages/!svn/ver/1/trunk/terafx/source/Envelopes/fxADSR.h
+END

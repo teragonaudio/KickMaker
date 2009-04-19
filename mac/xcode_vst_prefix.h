@@ -11,9 +11,6 @@
 #define __NOEXTENSIONS__
 #endif
 
-#define MAC_OS_X_VERSION_MIN_REQUIRED   1020
-#define MAC_OS_X_VERSION_MAX_ALLOWED	1030
-
 #include <Carbon/Carbon.h>
 #include <AvailabilityMacros.h>
 
@@ -22,4 +19,10 @@
 #define VST_FORCE_DEPRECATED 0
 #else
 #define VST_FORCE_DEPRECATED 1
+#endif
+
+#define USE_PC_VST 1
+
+#ifndef __defaults_h__
+#include "defaults.h"
 #endif

@@ -180,15 +180,21 @@ bool KickMaker::getProductString(char* text) {
 }
 
 VstInt32 KickMaker::getProgram() {
+#if USE_PC_PRESET
   return core->getCurrentPresetIndex();
+#endif
 }
 
 void KickMaker::getProgramName(char *name) {
+#if USE_PC_PRESET
   core->getCurrentPresetName(name);
+#endif
 }
 
 bool KickMaker::getProgramNameIndexed(VstInt32 category, VstInt32 index, char *text) {
+#if USE_PC_PRESET
   core->getPresetName(index, text);
+#endif
   return true;
 }
 

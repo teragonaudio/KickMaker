@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/packages/!svn/ver/1/trunk/terafx/source/Filters
+END
+fxHipassFilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/packages/!svn/ver/1/trunk/terafx/source/Filters/fxHipassFilter.h
+END
+fxSplineInterpolator.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/packages/!svn/ver/1/trunk/terafx/source/Filters/fxSplineInterpolator.h
+END
+fxLopassFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/packages/!svn/ver/1/trunk/terafx/source/Filters/fxLopassFilter.cpp
+END
+fxLopassFilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/packages/!svn/ver/1/trunk/terafx/source/Filters/fxLopassFilter.h
+END
+fxHipassFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/packages/!svn/ver/1/trunk/terafx/source/Filters/fxHipassFilter.cpp
+END
+fxSplineInterpolator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/packages/!svn/ver/1/trunk/terafx/source/Filters/fxSplineInterpolator.cpp
+END
