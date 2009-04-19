@@ -1,0 +1,91 @@
+/*
+ *  coords.h
+ *  KickMaker
+ *
+ *  Created by Nik Reiman on 03.03.06.
+ *  Copyright 2006 Teragon Audio. All rights reserved.
+ *
+ */
+
+#ifndef __coords_H
+#define __coords_H
+
+struct tCoords {
+  int tag;
+  int x;
+  int y;
+};
+
+static struct tCoords coords[] = {
+  { PRM_1_ENABLED, 94, 57 },
+  { PRM_1_FREQ, 63, 111 },
+  { PRM_1_FREQ_FINE, 95, 89 },
+  { PRM_1_ATTACK, 118, 111 },
+  { PRM_1_ATTACK_AMP, 150, 89 },
+  { PRM_1_DECAY, 172, 111 },
+  { PRM_1_DECAY_AMP, 204, 89 },
+  { PRM_1_SUSTAIN, 227, 111 },
+  { PRM_1_SUSTAIN_AMP, 259, 89 },
+  { PRM_1_RELEASE, 282, 111 },
+  { TAG_1_ADSR, 126, 62 },
+  { TAG_1_SWITCH, 269, 51 },
+  
+  { PRM_2_ENABLED, 380, 57 },
+  { PRM_2_FREQ, 349, 111 },
+  { PRM_2_FREQ_FINE, 382, 89 },
+  { PRM_2_ATTACK, 404, 111 },
+  { PRM_2_ATTACK_AMP, 436, 89 },
+  { PRM_2_DECAY, 458, 111 },
+  { PRM_2_DECAY_AMP, 491, 89 },
+  { PRM_2_SUSTAIN, 513, 111 },
+  { PRM_2_SUSTAIN_AMP, 546, 89 },
+  { PRM_2_RELEASE, 568, 111 },
+  { TAG_2_ADSR, 413, 62 },
+  { TAG_2_SWITCH, 554, 51 },
+  
+  { PRM_1_VOLUME, 409, 337 },
+  { PRM_2_VOLUME, 438, 337 },
+  { PRM_3_VOLUME, 467, 337 },
+  { PRM_4_VOLUME, 496, 337 },
+  { PRM_ALL_VOLUME, 525, 337 },
+  
+  { PRM_ALL_ATTACK, 372, 258 },
+  { PRM_ALL_ATTACK_AMP, 404, 234 },
+  { PRM_ALL_DECAY, 428, 258 },
+  { PRM_ALL_DECAY_AMP, 460, 234 },
+  { PRM_ALL_SUSTAIN, 484, 258 },
+  { PRM_ALL_SUSTAIN_AMP, 516, 234 },
+  { PRM_ALL_RELEASE, 540, 258 },
+  { TAG_ALL_ADSR, 402, 181 },
+  
+  { TAG_PRESET_DISPLAY, 139, 338 },
+  { TAG_SAVE_BUTTON, 193, 360 },
+  { TAG_DELETE_BUTTON, 225, 360 },
+  { TAG_NEXT_BUTTON, 161, 360 },
+  { TAG_PREV_BUTTON, 129, 360 },
+  
+  { TAG_1_EFFECT_LABEL1, 101, 205 },
+  { TAG_1_EFFECT_METER1, 101, 220 },
+  { TAG_1_EFFECT_LABEL2, 101, 235 },
+  { TAG_1_EFFECT_METER2, 101, 250 },
+  { TAG_1_EFFECT_LABEL3, 101, 265 },
+  { TAG_1_EFFECT_METER3, 101, 280 },
+  { TAG_2_EFFECT_LABEL1, 187, 205 },
+  { TAG_2_EFFECT_METER1, 187, 220 },
+  { TAG_2_EFFECT_LABEL2, 187, 235 },
+  { TAG_2_EFFECT_METER2, 187, 250 },
+  { TAG_2_EFFECT_LABEL3, 187, 265 },
+  { TAG_2_EFFECT_METER3, 187, 280 },
+  
+  { TAG_1_EFFECT_KNOB1, 60, 201 },
+  { TAG_1_EFFECT_KNOB2, 60, 239 },
+  { TAG_1_EFFECT_KNOB3, 60, 278 },
+  { TAG_2_EFFECT_KNOB1, 300, 201 },
+  { TAG_2_EFFECT_KNOB2, 300, 239 },
+  { TAG_2_EFFECT_KNOB3, 300, 278 },
+  
+  { TAG_HELP_SPLASH, 595, 370 },
+  { TAG_ABOUT_SPLASH, 595, 348 }
+};
+
+#endif
