@@ -35,6 +35,8 @@ float fxSelectWave::getParameter(int index) const
       return fxSawtooth::getParameter(index);
     case WAV_TRIANGLE:
       return fxTriangle::getParameter(index);
+    default:
+      return 0.0f;
   }
 }
 
