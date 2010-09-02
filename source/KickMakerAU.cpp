@@ -101,10 +101,11 @@ ComponentResult KickMaker::GetProperty(AudioUnitPropertyID inID,
                                        void *outData) {
   if(inScope == kAudioUnitScope_Global) {
     switch(inID) {
-      case PRP_CORE:
+      case PRP_CORE: {
         pluginCore **pc = (pluginCore**)outData;
         pc[0] = core;
         return noErr;
+      }
       default:
         return MusicDeviceBase::GetProperty(inID, inScope, inElement, outData);
     }
