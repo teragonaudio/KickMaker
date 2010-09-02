@@ -32,7 +32,7 @@ public:
   ~cSplashScreenVersion();
   
   virtual void draw(CDrawContext *pContext);
-  virtual bool cSplashScreenVersion::hitTest(const CPoint &where, const long buttons = -1);
+  virtual bool hitTest(const CPoint &where, const long buttons = -1);
   virtual void mouse(CDrawContext *pContext, CPoint &where, long buttons = -1);
   virtual void setVisible(bool val = true);
 protected:
