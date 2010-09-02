@@ -52,7 +52,7 @@ void fxLFO::process(float &input)
 void fxLFO::setType(int wavetype)
 {
   int num_extra_params = fxLFO_NUM_PARAMS - fxLFO_PRM_AMPLITUDE + 1; // fenceposting in action!
-  int old_values[num_extra_params];
+  int *old_values = new int[num_extra_params];
   
   // Get values of extra parameters for current waveform
   for(int i = 0; i < num_extra_params; ++i)
@@ -67,4 +67,6 @@ void fxLFO::setType(int wavetype)
   {
     fxSelectWave::setParameter(i + fxLFO_PRM_AMPLITUDE, old_values[i]);
   }
+
+  delete [] old_values;
 }
