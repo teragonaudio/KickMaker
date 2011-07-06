@@ -134,7 +134,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>C:\Program Files\Microsoft Platform SDK\Include;.\source;.\windows;.\source\gui;.\source\effects;.\source\plugincore;.\third-party\libpng\source;.\vstsdk2.4;.\vstsdk2.4\public.sdk\source\vst2.x;.\vstsdk2.4\vstgui.sf\vstgui;.\windows\libexpat\source;.\windows\libpng\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WINDOWS;_WINDOWS;WIN32;USE_PC_VST;USE_PC_EFFECTS;USE_PC_EVENTS;USE_PC_PRESET;USE_PC_MIDI;USE_PC_LOGGER;_USRDLL;_USE_MATH_DEFINES;USE_LIBPNG=1;_CRT_SECURE_NO_DEPRECATE;XML_STATIC=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WINDOWS;_WINDOWS;WIN32;USE_PC_VST;USE_PC_EFFECTS;USE_PC_EVENTS;USE_PC_PRESET;USE_PC_MIDI;_USRDLL;_USE_MATH_DEFINES;USE_LIBPNG=1;_CRT_SECURE_NO_DEPRECATE;XML_STATIC=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
