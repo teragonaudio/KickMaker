@@ -10,8 +10,9 @@
 #define DEF_PRODUCT "KickMaker"
 #define MAJ_VERSION 2
 #define MIN_VERSION 1
+#define PATCH_VERSION 1
 #define REL_BRANCH 'r'
-#define VERSION ((MAJ_VERSION * 1000) + (MIN_VERSION * 10))
+#define VERSION ((MAJ_VERSION * 1000) + (MIN_VERSION * 10) + (PATCH_VERSION))
 
 #define FEATURE_LFO 0
 
