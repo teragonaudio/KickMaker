@@ -416,7 +416,9 @@ bool pluginCore::setParameter(int index, float value, bool override, long frames
   }
 #endif
   
+#if 0
   m_logger->log(XML_LOGGER_TYPE_SET_PARAMETER, (float)index, (float)value);
+#endif
   
 #if USE_PC_AU
   if(m_params[index].type == TYP_CUSTOM) {

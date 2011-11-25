@@ -73,7 +73,9 @@ int pluginCore::getMidiNoteVelocity(int index) const
 
 void pluginCore::processMidi(int status, int channel, int byte1, int byte2, long frames)
 {
-  m_logger->log(XML_LOGGER_TYPE_MIDI, channel, byte1, byte2, (int)frames);
+#if 0
+    m_logger->log(XML_LOGGER_TYPE_MIDI, channel, byte1, byte2, (int)frames);
+#endif
   
   // Most modern hosts will attempt to schedule MIDI events with a frame offset, so in this case,
   // we add the event to the wait queue and skip processing (for now).  This feature requires the

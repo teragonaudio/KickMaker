@@ -189,7 +189,8 @@ void xmlLogger::log(const char *type, const char *key, const long value)
 #endif
 }
 
-void xmlLogger::log(char *type, float f1, float f2, float f3, float f4)
+#if 0
+void xmlLogger::log(const char *type, const float f1, float f2, float f3, float f4)
 {
 #if USE_PC_LOGGER
   /** Algorithm: */
@@ -230,6 +231,7 @@ void xmlLogger::log(char *type, int f1, int f2, int f3, int f4)
   }
 #endif
 }
+#endif
 
 void xmlLogger::logData(const char *type, const void *data, const int length)
 {
