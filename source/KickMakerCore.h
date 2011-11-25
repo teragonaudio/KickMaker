@@ -56,7 +56,7 @@
 
 class KickMakerCore : public pluginCore {
   public:
-    KickMakerCore(int num_params, long version, char *name);
+    KickMakerCore(int num_params, long version, const char *name);
     ~KickMakerCore();
 
     void loadPreset(int index);

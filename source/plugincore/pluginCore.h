@@ -416,7 +416,7 @@ public:
   * with the name of XML_LOGGER_DEFAULT_NAME will be used (if it exists).
   * \param logmode Either XML_WRITER_MODE_APPEND or XML_WRITER_MODE_WRITE
   */
-  pluginCore(int num_params = 0, long version = 1000, char *name = NULL,
+  pluginCore(int num_params = 0, long version = 1000, const char *name = NULL,
              char *logfile = NULL, int logmode = XML_WRITER_MODE_APPEND);
 
   virtual ~pluginCore();

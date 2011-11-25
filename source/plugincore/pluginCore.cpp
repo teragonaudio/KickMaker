@@ -50,7 +50,7 @@ static tLabel labels[] =
 
 // Implementation //////////////////////////////////////////////////////////////////////
 
-pluginCore::pluginCore(int num_params, long version, char *name, char *logfile, int logmode)
+pluginCore::pluginCore(int num_params, long version, const char *name, char *logfile, int logmode)
 #if USE_PC_EVENTS
 : eventListener()
 #endif

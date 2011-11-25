@@ -82,7 +82,7 @@ public:
   /*! \brief Log a single tag without any additional arguments
   * \param type The tag type
   */
-  virtual void log(char *type);
+  virtual void log(const char *type);
   
   /*! \brief Log an entry in the file
   * \param type The type of tag to write.  Should be one of the XML_LOGGER_TYPE definitions,
@@ -90,10 +90,10 @@ public:
   * \param key The key name for a key/value pair
   * \param value The value string
   */
-  virtual void log(char *type, char *key, char *value = NULL);
-  virtual void log(char *type, char *key, float value);
-  virtual void log(char *type, char *key, int value);
-  virtual void log(char *type, char *key, long value);
+  virtual void log(const char *type, const char *key, const char *value = NULL);
+  virtual void log(const char *type, const char *key, const float value);
+  virtual void log(const char *type, const char *key, const int value);
+  virtual void log(const char *type, const char *key, const long value);
   
   /*! \brief Log up to four floating point numbers
   * \param type The type of tag to write
@@ -102,15 +102,16 @@ public:
   * \param f3 Third argument (optional)
   * \param f4 Fourth argument (optional)
   */
-  virtual void log(char *type, float f1, float f2 = 0.0, float f3 = 0.0, float f4 = 0.0);
+    /*
+  virtual void log(const char *type, float f1, float f2 = 0.0, float f3 = 0.0, float f4 = 0.0);
   virtual void log(char *type, int f1, int f2 = 0, int f3 = 0, int f4 = 0);
-  
+  */
   /*! \brief Log a chunk of data
   * \param type The type of tag to write
   * \param data A pointer to the data block
   * \param length The size (in bytes) of the block
   */
-  virtual void logData(char *type, void *data, int length);
+  virtual void logData(const char *type, const void *data, const int length);
   
 protected:
   /*! \brief Initialize a logging session */

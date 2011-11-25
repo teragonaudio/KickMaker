@@ -98,7 +98,7 @@ long xmlLogger::getTime()
   return (m_tv.tv_sec * 1000) + (m_tv.tv_usec / 1000) - m_start_ms;
 }
 
-void xmlLogger::log(char *type)
+void xmlLogger::log(const char *type)
 {
 #if USE_PC_LOGGER
   /** Algorithm: */
@@ -113,7 +113,7 @@ void xmlLogger::log(char *type)
 #endif
 }
 
-void xmlLogger::log(char *type, char *key, char *value)
+void xmlLogger::log(const char *type, const char *key, const char *value)
 {
 #if USE_PC_LOGGER
   /** Algorithm: */
@@ -138,7 +138,7 @@ void xmlLogger::log(char *type, char *key, char *value)
 #endif
 }
 
-void xmlLogger::log(char *type, char *key, float value)
+void xmlLogger::log(const char *type, const char *key, const float value)
 {
 #if USE_PC_LOGGER
   /** Algorithm: */
@@ -155,7 +155,7 @@ void xmlLogger::log(char *type, char *key, float value)
 #endif
 }
 
-void xmlLogger::log(char *type, char *key, int value)
+void xmlLogger::log(const char *type, const char *key, const int value)
 {
 #if USE_PC_LOGGER
   /** Algorithm: */
@@ -172,7 +172,7 @@ void xmlLogger::log(char *type, char *key, int value)
 #endif
 }
 
-void xmlLogger::log(char *type, char *key, long value)
+void xmlLogger::log(const char *type, const char *key, const long value)
 {
 #if USE_PC_LOGGER
   /** Algorithm: */
@@ -231,7 +231,7 @@ void xmlLogger::log(char *type, int f1, int f2, int f3, int f4)
 #endif
 }
 
-void xmlLogger::logData(char *type, void *data, int length)
+void xmlLogger::logData(const char *type, const void *data, const int length)
 {
 #if USE_PC_LOGGER
   /** Algorithm: */

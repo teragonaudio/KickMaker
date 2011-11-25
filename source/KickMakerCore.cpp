@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include <math.h>
 
-KickMakerCore::KickMakerCore(int num_params, long version, char *name) :
+KickMakerCore::KickMakerCore(int num_params, long version, const char *name) :
 pluginCore(num_params, version, name) {
   addParameter(PRM_1_ENABLED, "Osc 1 On", TYP_BOOL, 0.0, 1.0, 1.0);
   addParameter(PRM_1_FREQ, "Freq 1", TYP_HZ, MIN_FREQ, MAX_FREQ, MIN_FREQ);
