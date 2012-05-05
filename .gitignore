@@ -8,3 +8,6 @@ ipch/*
 *.suo 
 *.user 
 *.sdf 
+.DS_Store
+xcuserdata
+project.xcworkspace
