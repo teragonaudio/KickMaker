@@ -22,4 +22,4 @@ LICENSE.txt file. Due to licensing restrictions, the VST SDK is not
 distributed with the source code of this plugin. If you want to build
 KickMaker by hand, then you must download it here:
 
-  http://www.steinberg.net/en/company/3rd_party_developer.html
+http://www.steinberg.net/en/company/3rd_party_developer.html
