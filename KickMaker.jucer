@@ -11,13 +11,39 @@
               pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="3.0.0">
   <MAINGROUP id="ypU0Av" name="KickMaker">
     <GROUP id="{F34F5409-19B5-741E-C22B-FC835B7E0F84}" name="Source">
+      <GROUP id="{4ED798AC-BC00-5BA2-39A9-93939C2EFF7D}" name="Effects">
+        <FILE id="I6L2YT" name="AdsrEnvelope.cpp" compile="1" resource="0"
+              file="Source/AdsrEnvelope.cpp"/>
+        <FILE id="mb4jAL" name="AdsrEnvelope.h" compile="0" resource="0" file="Source/AdsrEnvelope.h"/>
+        <FILE id="aRawpn" name="Compressor.cpp" compile="1" resource="0" file="Source/Compressor.cpp"/>
+        <FILE id="GXh6j9" name="Compressor.h" compile="0" resource="0" file="Source/Compressor.h"/>
+        <FILE id="Zmdo89" name="LopassFilter.cpp" compile="1" resource="0"
+              file="Source/LopassFilter.cpp"/>
+        <FILE id="t723A1" name="LopassFilter.h" compile="0" resource="0" file="Source/LopassFilter.h"/>
+      </GROUP>
+      <GROUP id="{E0283876-816C-64F7-4BAB-4E6E87B86A5A}" name="Waveforms">
+        <FILE id="sCPS9u" name="NoiseWave.cpp" compile="1" resource="0" file="Source/NoiseWave.cpp"/>
+        <FILE id="Gwor7j" name="NoiseWave.h" compile="0" resource="0" file="Source/NoiseWave.h"/>
+        <FILE id="BGH5lM" name="SawtoothWave.cpp" compile="1" resource="0"
+              file="Source/SawtoothWave.cpp"/>
+        <FILE id="lhepUS" name="SawtoothWave.h" compile="0" resource="0" file="Source/SawtoothWave.h"/>
+        <FILE id="vPJOjM" name="SineWave.cpp" compile="1" resource="0" file="Source/SineWave.cpp"/>
+        <FILE id="FjGyq3" name="SineWave.h" compile="0" resource="0" file="Source/SineWave.h"/>
+        <FILE id="eTZLyS" name="SquareWave.cpp" compile="1" resource="0" file="Source/SquareWave.cpp"/>
+        <FILE id="uKq9WN" name="SquareWave.h" compile="0" resource="0" file="Source/SquareWave.h"/>
+        <FILE id="fKY7jk" name="TriangleWave.cpp" compile="1" resource="0"
+              file="Source/TriangleWave.cpp"/>
+        <FILE id="U3QCIz" name="TriangleWave.h" compile="0" resource="0" file="Source/TriangleWave.h"/>
+      </GROUP>
+      <FILE id="vffSrb" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
+      <FILE id="ws7oBK" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
+      <FILE id="Z36kJf" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="c2MT5L" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
       <FILE id="EDnLgH" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="I8LEnw" name="PluginProcessor.h" compile="0" resource="0"
             file="Source/PluginProcessor.h"/>
-      <FILE id="Z36kJf" name="PluginEditor.cpp" compile="1" resource="0"
-            file="Source/PluginEditor.cpp"/>
-      <FILE id="c2MT5L" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
   </MAINGROUP>
   <MODULES>

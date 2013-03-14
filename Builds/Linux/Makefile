@@ -43,8 +43,17 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
-  $(OBJDIR)/PluginProcessor_a059e380.o \
+  $(OBJDIR)/AdsrEnvelope_7bcd373b.o \
+  $(OBJDIR)/Compressor_5df553ce.o \
+  $(OBJDIR)/LopassFilter_51534b35.o \
+  $(OBJDIR)/NoiseWave_d1e7d514.o \
+  $(OBJDIR)/SawtoothWave_fb6b2ca1.o \
+  $(OBJDIR)/SineWave_ad820eaf.o \
+  $(OBJDIR)/SquareWave_d368543f.o \
+  $(OBJDIR)/TriangleWave_b8c4852a.o \
+  $(OBJDIR)/Oscillator_8a6cfe29.o \
   $(OBJDIR)/PluginEditor_94d4fb09.o \
+  $(OBJDIR)/PluginProcessor_a059e380.o \
   $(OBJDIR)/juce_audio_basics_2442e4ea.o \
   $(OBJDIR)/juce_audio_processors_44a134a2.o \
   $(OBJDIR)/juce_core_aff681cc.o \
@@ -75,14 +84,59 @@ strip:
 	@echo Stripping KickMaker
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
 
-$(OBJDIR)/PluginProcessor_a059e380.o: ../../Source/PluginProcessor.cpp
+$(OBJDIR)/AdsrEnvelope_7bcd373b.o: ../../Source/AdsrEnvelope.cpp
 	-@mkdir -p $(OBJDIR)
-	@echo "Compiling PluginProcessor.cpp"
+	@echo "Compiling AdsrEnvelope.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/Compressor_5df553ce.o: ../../Source/Compressor.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling Compressor.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/LopassFilter_51534b35.o: ../../Source/LopassFilter.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling LopassFilter.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/NoiseWave_d1e7d514.o: ../../Source/NoiseWave.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling NoiseWave.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/SawtoothWave_fb6b2ca1.o: ../../Source/SawtoothWave.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling SawtoothWave.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/SineWave_ad820eaf.o: ../../Source/SineWave.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling SineWave.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/SquareWave_d368543f.o: ../../Source/SquareWave.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling SquareWave.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/TriangleWave_b8c4852a.o: ../../Source/TriangleWave.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling TriangleWave.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/Oscillator_8a6cfe29.o: ../../Source/Oscillator.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling Oscillator.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/PluginEditor_94d4fb09.o: ../../Source/PluginEditor.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling PluginEditor.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/PluginProcessor_a059e380.o: ../../Source/PluginProcessor.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling PluginProcessor.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/juce_audio_basics_2442e4ea.o: ../../JuceLibraryCode/modules/juce_audio_basics/juce_audio_basics.cpp
