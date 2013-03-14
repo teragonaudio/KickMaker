@@ -1,0 +1,3 @@
+[submodule "Third-Party/PluginParameters"]
+	path = Third-Party/PluginParameters
+	url = git@github.com:teragonaudio/PluginParameters.git
