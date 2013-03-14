@@ -22,107 +22,6 @@ KickMakerAudioProcessor::~KickMakerAudioProcessor()
 }
 
 //==============================================================================
-const String KickMakerAudioProcessor::getName() const
-{
-    return JucePlugin_Name;
-}
-
-int KickMakerAudioProcessor::getNumParameters()
-{
-    return 0;
-}
-
-float KickMakerAudioProcessor::getParameter (int index)
-{
-    return 0.0f;
-}
-
-void KickMakerAudioProcessor::setParameter (int index, float newValue)
-{
-}
-
-const String KickMakerAudioProcessor::getParameterName (int index)
-{
-    return String::empty;
-}
-
-const String KickMakerAudioProcessor::getParameterText (int index)
-{
-    return String::empty;
-}
-
-const String KickMakerAudioProcessor::getInputChannelName (int channelIndex) const
-{
-    return String (channelIndex + 1);
-}
-
-const String KickMakerAudioProcessor::getOutputChannelName (int channelIndex) const
-{
-    return String (channelIndex + 1);
-}
-
-bool KickMakerAudioProcessor::isInputChannelStereoPair (int index) const
-{
-    return true;
-}
-
-bool KickMakerAudioProcessor::isOutputChannelStereoPair (int index) const
-{
-    return true;
-}
-
-bool KickMakerAudioProcessor::acceptsMidi() const
-{
-   #if JucePlugin_WantsMidiInput
-    return true;
-   #else
-    return false;
-   #endif
-}
-
-bool KickMakerAudioProcessor::producesMidi() const
-{
-   #if JucePlugin_ProducesMidiOutput
-    return true;
-   #else
-    return false;
-   #endif
-}
-
-bool KickMakerAudioProcessor::silenceInProducesSilenceOut() const
-{
-    return false;
-}
-
-double KickMakerAudioProcessor::getTailLengthSeconds() const
-{
-    return 0.0;
-}
-
-int KickMakerAudioProcessor::getNumPrograms()
-{
-    return 0;
-}
-
-int KickMakerAudioProcessor::getCurrentProgram()
-{
-    return 0;
-}
-
-void KickMakerAudioProcessor::setCurrentProgram (int index)
-{
-}
-
-const String KickMakerAudioProcessor::getProgramName (int index)
-{
-    return String::empty;
-}
-
-void KickMakerAudioProcessor::changeProgramName (int index, const String& newName)
-{
-}
-
-//==============================================================================
 void KickMakerAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     // Use this method as the place to do any pre-playback
@@ -156,11 +55,6 @@ void KickMakerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffe
 }
 
 //==============================================================================
-bool KickMakerAudioProcessor::hasEditor() const
-{
-    return true; // (change this to false if you choose to not supply an editor)
-}
-
 AudioProcessorEditor* KickMakerAudioProcessor::createEditor()
 {
     return new KickMakerAudioProcessorEditor (this);
@@ -169,15 +63,26 @@ AudioProcessorEditor* KickMakerAudioProcessor::createEditor()
 //==============================================================================
 void KickMakerAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
-    // You should use this method to store your parameters in the memory block.
-    // You could do that either as raw data, or use the XML or ValueTree classes
-    // as intermediaries to make it easy to save and load complex data.
+    XmlElement xml(getName());
+    for (int i = 0; i < parameters.size(); i++) {
+        PluginParameter *parameter = parameters[i];
+        xml.setAttribute(parameter->getSafeName().c_str(), parameter->getValue());
+    }
+    copyXmlToBinary(xml, destData);
 }
 
 void KickMakerAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    // You should use this method to restore your parameters from this memory block,
-    // whose contents will have been created by the getStateInformation() call.
+    ScopedPointer<XmlElement> xmlState(getXmlFromBinary(data, sizeInBytes));
+    if (xmlState != 0 && xmlState->hasTagName(getName())) {
+        for (int i = 0; i < parameters.size(); i++) {
+            PluginParameter *parameter = parameters[i];
+            if (xmlState->hasAttribute(parameter->getSafeName().c_str())) {
+                parameter->setValue(xmlState->getDoubleAttribute(parameter->getSafeName().c_str()));
+            }
+        }
+        reset();
+    }
 }
 
 //==============================================================================

@@ -12,11 +12,11 @@
 #define __PLUGINPROCESSOR_H_C7A4E721__
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "PluginParameters.h"
 
+using namespace teragon;
 
 //==============================================================================
-/**
-*/
 class KickMakerAudioProcessor  : public AudioProcessor
 {
 public:
@@ -32,39 +32,41 @@ public:
 
     //==============================================================================
     AudioProcessorEditor* createEditor();
-    bool hasEditor() const;
+    bool hasEditor() const { return true; }
 
     //==============================================================================
-    const String getName() const;
+    const String getName() const { return JucePlugin_Name; }
 
-    int getNumParameters();
+    int getNumParameters() { return parameters.size(); }
+    float getParameter (int index) { return parameters[index]->getScaledValue(); }
+    void setParameter (int index, float newValue) { parameters[index]->setScaledValue(newValue); }
 
-    float getParameter (int index);
-    void setParameter (int index, float newValue);
+    const String getParameterName (int index) { return parameters[index]->getName().c_str(); }
+    const String getParameterText (int index) { return parameters[index]->getDisplayText().c_str(); }
 
-    const String getParameterName (int index);
-    const String getParameterText (int index);
+    const String getInputChannelName (int channelIndex) const { return String(channelIndex + 1); }
+    const String getOutputChannelName (int channelIndex) const { return String(channelIndex + 1); }
+    bool isInputChannelStereoPair (int index) const { return true; }
+    bool isOutputChannelStereoPair (int index) const { return true; }
 
-    const String getInputChannelName (int channelIndex) const;
-    const String getOutputChannelName (int channelIndex) const;
-    bool isInputChannelStereoPair (int index) const;
-    bool isOutputChannelStereoPair (int index) const;
-
-    bool acceptsMidi() const;
-    bool producesMidi() const;
-    bool silenceInProducesSilenceOut() const;
-    double getTailLengthSeconds() const;
+    bool acceptsMidi() const { return true; }
+    bool producesMidi() const { return false; }
+    bool silenceInProducesSilenceOut() const { return true; }
+    double getTailLengthSeconds() const { return 0.0; }
 
     //==============================================================================
-    int getNumPrograms();
-    int getCurrentProgram();
-    void setCurrentProgram (int index);
-    const String getProgramName (int index);
-    void changeProgramName (int index, const String& newName);
+    int getNumPrograms() { return 0; }
+    int getCurrentProgram() { return 0; }
+    void setCurrentProgram (int index) {}
+    const String getProgramName (int index) { return String::empty; }
+    void changeProgramName (int index, const String& newName) {}
 
     //==============================================================================
     void getStateInformation (MemoryBlock& destData);
     void setStateInformation (const void* data, int sizeInBytes);
+
+private:
+    PluginParameterSet parameters;
 
 private:
     //==============================================================================
