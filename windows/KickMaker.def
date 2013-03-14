@@ -1,4 +1,0 @@
-LIBRARY			KICKMAKER
-EXPORTS
-	VSTPluginMain
-	main=VSTPluginMain
