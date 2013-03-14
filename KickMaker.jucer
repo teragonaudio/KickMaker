@@ -34,6 +34,7 @@
         <FILE id="fKY7jk" name="TriangleWave.cpp" compile="1" resource="0"
               file="Source/TriangleWave.cpp"/>
         <FILE id="U3QCIz" name="TriangleWave.h" compile="0" resource="0" file="Source/TriangleWave.h"/>
+        <FILE id="sLW60B" name="Waveform.h" compile="0" resource="0" file="Source/Waveform.h"/>
       </GROUP>
       <FILE id="vffSrb" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
       <FILE id="ws7oBK" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
