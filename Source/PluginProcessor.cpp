@@ -123,7 +123,7 @@ void KickMakerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffe
     // audio processing...
     for (int channel = 0; channel < getNumInputChannels(); ++channel)
     {
-        float* channelData = buffer.getSampleData (channel);
+        float* channelData = buffer.getSampleData(channel);
 
         // ..do something to the data...
     }
@@ -133,14 +133,14 @@ void KickMakerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffe
     // guaranteed to be empty - they may contain garbage).
     for (int i = getNumInputChannels(); i < getNumOutputChannels(); ++i)
     {
-        buffer.clear (i, 0, buffer.getNumSamples());
+        buffer.clear(i, 0, buffer.getNumSamples());
     }
 }
 
 //==============================================================================
 AudioProcessorEditor* KickMakerAudioProcessor::createEditor()
 {
-    return new KickMakerAudioProcessorEditor (this);
+    return new KickMakerAudioProcessorEditor(this);
 }
 
 //==============================================================================
