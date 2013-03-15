@@ -15,7 +15,7 @@
 
 class Waveform : public BufferProcessor {
 public:
-    Waveform() : frequency(20.0f), phase(0), sampleRate(44100.0f), index(0) {}
+    Waveform() : BufferProcessor(), frequency(20.0f), phase(0), sampleRate(44100.0f), index(0) {}
     virtual ~Waveform() {}
 
     virtual void process(float* buffer, int numSamples) = 0;
