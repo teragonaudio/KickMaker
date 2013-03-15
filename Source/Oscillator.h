@@ -13,6 +13,7 @@
 
 #include "PluginParameters.h"
 #include "BufferProcessor.h"
+#include "FrequencyCalculator.h"
 #include "Waveforms/Waveform.h"
 #include "Effects/AdsrEnvelope.h"
 

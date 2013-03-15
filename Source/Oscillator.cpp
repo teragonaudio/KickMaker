@@ -49,8 +49,10 @@ void Oscillator::onParameterUpdated(const PluginParameter* parameter)
             currentWaveform = waveforms[(int)parameter->getValue()];
             break;
         case kTypeOscDetune:
+            frequencyCalculator.setDetune(parameter->getValue());
             break;
         case kTypeOscDetuneFine:
+            frequencyCalculator.setDetuneFine(parameter->getValue());
             break;
         case kTypeOscExpand:
             break;
@@ -97,11 +99,14 @@ void Oscillator::process(float* buffer, int numSamples)
     }
 }
 
-void Oscillator::setFrequency(float inFrequency)
+void Oscillator::setNoteOn(int note, int velocity)
 {
-    for(int i = 0; i < kNumWaveforms; ++i) {
-        waveforms[i]->setFrequency(inFrequency);
-    }
+    currentWaveform->setFrequency(frequencyCalculator.getFrequencyForNote(note));
+}
+
+void Oscillator::setNoteOff()
+{
+
 }
 
 void Oscillator::setPhase(float inPhase)
