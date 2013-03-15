@@ -52,6 +52,7 @@ OBJECTS := \
   $(OBJDIR)/SineWave_c102fa68.o \
   $(OBJDIR)/SquareWave_a5d35b8.o \
   $(OBJDIR)/TriangleWave_606ec63.o \
+  $(OBJDIR)/FrequencyCalculator_495108df.o \
   $(OBJDIR)/Oscillator_8a6cfe29.o \
   $(OBJDIR)/PluginEditor_94d4fb09.o \
   $(OBJDIR)/PluginProcessor_a059e380.o \
@@ -128,6 +129,11 @@ $(OBJDIR)/SquareWave_a5d35b8.o: ../../Source/Waveforms/SquareWave.cpp
 $(OBJDIR)/TriangleWave_606ec63.o: ../../Source/Waveforms/TriangleWave.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling TriangleWave.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/FrequencyCalculator_495108df.o: ../../Source/FrequencyCalculator.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling FrequencyCalculator.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/Oscillator_8a6cfe29.o: ../../Source/Oscillator.cpp

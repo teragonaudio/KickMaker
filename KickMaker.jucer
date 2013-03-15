@@ -41,6 +41,10 @@
       </GROUP>
       <FILE id="sC4Dto" name="BufferProcessor.h" compile="0" resource="0"
             file="Source/BufferProcessor.h"/>
+      <FILE id="dnfq09" name="FrequencyCalculator.cpp" compile="1" resource="0"
+            file="Source/FrequencyCalculator.cpp"/>
+      <FILE id="EXABId" name="FrequencyCalculator.h" compile="0" resource="0"
+            file="Source/FrequencyCalculator.h"/>
       <FILE id="vffSrb" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
       <FILE id="ws7oBK" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
       <FILE id="Z36kJf" name="PluginEditor.cpp" compile="1" resource="0"
