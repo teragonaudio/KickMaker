@@ -91,6 +91,10 @@ void Oscillator::onParameterUpdated(const PluginParameter* parameter)
 
 void Oscillator::process(float* buffer, int numSamples)
 {
+    if(!enabled) {
+        return;
+    }
+
     currentWaveform->process(buffer, numSamples);
     adsrEnvelope.process(buffer, numSamples);
 
