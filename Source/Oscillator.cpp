@@ -9,11 +9,11 @@
 */
 
 #include "Oscillator.h"
-#include "NoiseWave.h"
-#include "SawtoothWave.h"
-#include "SineWave.h"
-#include "SquareWave.h"
-#include "TriangleWave.h"
+#include "Waveforms/NoiseWave.h"
+#include "Waveforms/SawtoothWave.h"
+#include "Waveforms/SineWave.h"
+#include "Waveforms/SquareWave.h"
+#include "Waveforms/TriangleWave.h"
 
 Oscillator::Oscillator()
 {

@@ -12,7 +12,7 @@
 #define __OSCILLATOR_H_A19FA352__
 
 #include "PluginParameters.h"
-#include "Waveform.h"
+#include "Waveforms/Waveform.h"
 
 using namespace teragon;
 

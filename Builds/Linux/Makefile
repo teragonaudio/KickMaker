@@ -43,14 +43,14 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
-  $(OBJDIR)/AdsrEnvelope_7bcd373b.o \
-  $(OBJDIR)/Compressor_5df553ce.o \
-  $(OBJDIR)/LopassFilter_51534b35.o \
-  $(OBJDIR)/NoiseWave_d1e7d514.o \
-  $(OBJDIR)/SawtoothWave_fb6b2ca1.o \
-  $(OBJDIR)/SineWave_ad820eaf.o \
-  $(OBJDIR)/SquareWave_d368543f.o \
-  $(OBJDIR)/TriangleWave_b8c4852a.o \
+  $(OBJDIR)/AdsrEnvelope_eb2c94c8.o \
+  $(OBJDIR)/Compressor_70b8b09b.o \
+  $(OBJDIR)/LopassFilter_c0b2a8c2.o \
+  $(OBJDIR)/NoiseWave_2e84607b.o \
+  $(OBJDIR)/SawtoothWave_48ad93da.o \
+  $(OBJDIR)/SineWave_c102fa68.o \
+  $(OBJDIR)/SquareWave_a5d35b8.o \
+  $(OBJDIR)/TriangleWave_606ec63.o \
   $(OBJDIR)/Oscillator_8a6cfe29.o \
   $(OBJDIR)/PluginEditor_94d4fb09.o \
   $(OBJDIR)/PluginProcessor_a059e380.o \
@@ -84,42 +84,42 @@ strip:
 	@echo Stripping KickMaker
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
 
-$(OBJDIR)/AdsrEnvelope_7bcd373b.o: ../../Source/AdsrEnvelope.cpp
+$(OBJDIR)/AdsrEnvelope_eb2c94c8.o: ../../Source/Effects/AdsrEnvelope.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling AdsrEnvelope.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/Compressor_5df553ce.o: ../../Source/Compressor.cpp
+$(OBJDIR)/Compressor_70b8b09b.o: ../../Source/Effects/Compressor.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling Compressor.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/LopassFilter_51534b35.o: ../../Source/LopassFilter.cpp
+$(OBJDIR)/LopassFilter_c0b2a8c2.o: ../../Source/Effects/LopassFilter.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling LopassFilter.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/NoiseWave_d1e7d514.o: ../../Source/NoiseWave.cpp
+$(OBJDIR)/NoiseWave_2e84607b.o: ../../Source/Waveforms/NoiseWave.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling NoiseWave.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/SawtoothWave_fb6b2ca1.o: ../../Source/SawtoothWave.cpp
+$(OBJDIR)/SawtoothWave_48ad93da.o: ../../Source/Waveforms/SawtoothWave.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling SawtoothWave.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/SineWave_ad820eaf.o: ../../Source/SineWave.cpp
+$(OBJDIR)/SineWave_c102fa68.o: ../../Source/Waveforms/SineWave.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling SineWave.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/SquareWave_d368543f.o: ../../Source/SquareWave.cpp
+$(OBJDIR)/SquareWave_a5d35b8.o: ../../Source/Waveforms/SquareWave.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling SquareWave.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/TriangleWave_b8c4852a.o: ../../Source/TriangleWave.cpp
+$(OBJDIR)/TriangleWave_606ec63.o: ../../Source/Waveforms/TriangleWave.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling TriangleWave.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
