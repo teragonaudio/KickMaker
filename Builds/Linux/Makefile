@@ -46,6 +46,7 @@ OBJECTS := \
   $(OBJDIR)/AdsrEnvelope_eb2c94c8.o \
   $(OBJDIR)/Compressor_70b8b09b.o \
   $(OBJDIR)/LopassFilter_c0b2a8c2.o \
+  $(OBJDIR)/WaveSmoother_7741b10a.o \
   $(OBJDIR)/NoiseWave_2e84607b.o \
   $(OBJDIR)/SawtoothWave_48ad93da.o \
   $(OBJDIR)/SineWave_c102fa68.o \
@@ -97,6 +98,11 @@ $(OBJDIR)/Compressor_70b8b09b.o: ../../Source/Effects/Compressor.cpp
 $(OBJDIR)/LopassFilter_c0b2a8c2.o: ../../Source/Effects/LopassFilter.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling LopassFilter.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/WaveSmoother_7741b10a.o: ../../Source/Effects/WaveSmoother.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling WaveSmoother.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/NoiseWave_2e84607b.o: ../../Source/Waveforms/NoiseWave.cpp

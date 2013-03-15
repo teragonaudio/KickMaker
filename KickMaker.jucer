@@ -20,6 +20,9 @@
         <FILE id="sMFqsQ" name="LopassFilter.cpp" compile="1" resource="0"
               file="Source/Effects/LopassFilter.cpp"/>
         <FILE id="kiZwjp" name="LopassFilter.h" compile="0" resource="0" file="Source/Effects/LopassFilter.h"/>
+        <FILE id="xn766e" name="WaveSmoother.cpp" compile="1" resource="0"
+              file="Source/Effects/WaveSmoother.cpp"/>
+        <FILE id="lBQoPx" name="WaveSmoother.h" compile="0" resource="0" file="Source/Effects/WaveSmoother.h"/>
       </GROUP>
       <GROUP id="{E0283876-816C-64F7-4BAB-4E6E87B86A5A}" name="Waveforms">
         <FILE id="j4vrcN" name="NoiseWave.cpp" compile="1" resource="0" file="Source/Waveforms/NoiseWave.cpp"/>
@@ -36,6 +39,8 @@
         <FILE id="aueXig" name="TriangleWave.h" compile="0" resource="0" file="Source/Waveforms/TriangleWave.h"/>
         <FILE id="HLCVUR" name="Waveform.h" compile="0" resource="0" file="Source/Waveforms/Waveform.h"/>
       </GROUP>
+      <FILE id="sC4Dto" name="BufferProcessor.h" compile="0" resource="0"
+            file="Source/BufferProcessor.h"/>
       <FILE id="vffSrb" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
       <FILE id="ws7oBK" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
       <FILE id="Z36kJf" name="PluginEditor.cpp" compile="1" resource="0"
