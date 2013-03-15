@@ -11,7 +11,9 @@
 #ifndef __WAVEFORM_H_18A500AF__
 #define __WAVEFORM_H_18A500AF__
 
-class Waveform {
+#include "../BufferProcessor.h"
+
+class Waveform : public BufferProcessor {
 public:
     Waveform() : frequency(20.0f), phase(0), sampleRate(44100.0f), index(0) {}
     virtual ~Waveform() {}

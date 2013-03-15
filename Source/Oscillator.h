@@ -12,7 +12,9 @@
 #define __OSCILLATOR_H_A19FA352__
 
 #include "PluginParameters.h"
+#include "BufferProcessor.h"
 #include "Waveforms/Waveform.h"
+#include "Effects/AdsrEnvelope.h"
 
 using namespace teragon;
 
@@ -36,13 +38,15 @@ enum {
     kTypeOscVolume
 };
 
-class Oscillator : public PluginParameterObserver {
+class Oscillator : public BufferProcessor, public PluginParameterObserver {
 public:
     Oscillator();
     virtual ~Oscillator();
 
     void observeParameters(PluginParameterSet& parameters);
     void onParameterUpdated(const PluginParameter* parameter);
+
+    void process(float* buffer, int numSamples);
 
     void setFrequency(float inFrequency);
     void setPhase(float inPhase);
