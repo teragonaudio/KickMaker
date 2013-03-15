@@ -107,8 +107,9 @@ KickMakerAudioProcessor::~KickMakerAudioProcessor()
 //==============================================================================
 void KickMakerAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    for(int i = 0; i < kNumOscillators; ++i) {
+        oscillators[i].setSampleRate(sampleRate);
+    }
 }
 
 void KickMakerAudioProcessor::releaseResources()

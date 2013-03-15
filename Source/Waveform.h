@@ -13,19 +13,20 @@
 
 class Waveform {
 public:
-    Waveform() : frequency(20.0f), sampleRate(44100.0f) {}
+    Waveform() : frequency(20.0f), phase(0), sampleRate(44100.0f), index(0) {}
     virtual ~Waveform() {}
 
     virtual void process(float* buffer, int numSamples) = 0;
 
     virtual void setFrequency(float inFrequency) { this->frequency = inFrequency; }
     virtual void setPhase(float inPhase) { this->phase = inPhase; }
-    virtual void setSampleRate(float inSampleRate) { this->sampleRate = inSampleRate; }
+    virtual void setSampleRate(double inSampleRate) { this->sampleRate = inSampleRate; }
 
-private:
+protected:
     float frequency;
     float phase;
-    float sampleRate;
+    double sampleRate;
+    int index;
 };
 
 #endif  // __WAVEFORM_H_18A500AF__

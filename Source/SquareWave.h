@@ -15,10 +15,13 @@
 
 class SquareWave : public Waveform {
 public:
-    SquareWave() {}
+    SquareWave() : Waveform(), rising(false) {}
     virtual ~SquareWave() {}
 
     void process(float* buffer, int numSamples);
+
+private:
+    bool rising;
 };
 
 #endif  // __SQUAREWAVE_H_C8586E8__

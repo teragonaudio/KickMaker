@@ -79,3 +79,25 @@ void Oscillator::onParameterUpdated(const PluginParameter* parameter)
             break;
     }
 }
+
+void Oscillator::setFrequency(float inFrequency)
+{
+    for(int i = 0; i < kNumWaveforms; ++i) {
+        waveforms[i]->setFrequency(inFrequency);
+    }
+}
+
+void Oscillator::setPhase(float inPhase)
+{
+    for(int i = 0; i < kNumWaveforms; ++i) {
+        waveforms[i]->setPhase(inPhase);
+    }
+}
+
+void Oscillator::setSampleRate(double inSampleRate)
+{
+    for(int i = 0; i < kNumWaveforms; ++i) {
+        waveforms[i]->setSampleRate(inSampleRate);
+    }
+}
+

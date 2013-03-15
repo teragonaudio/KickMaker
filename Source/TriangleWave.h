@@ -15,10 +15,13 @@
 
 class TriangleWave : public Waveform {
 public:
-    TriangleWave() {}
+    TriangleWave() : Waveform(), rising(true) {}
     virtual ~TriangleWave() {}
 
     void process(float* buffer, int numSamples);
+
+private:
+    bool rising;
 };
 
 #endif  // __TRIANGLEWAVE_H_F0C34D93__

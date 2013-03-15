@@ -15,7 +15,7 @@
 
 class SineWave : public Waveform {
 public:
-    SineWave() {}
+    SineWave() : Waveform() {}
     virtual ~SineWave() {}
 
     void process(float* buffer, int numSamples);

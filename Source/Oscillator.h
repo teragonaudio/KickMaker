@@ -44,6 +44,10 @@ public:
     void observeParameters(PluginParameterSet& parameters);
     void onParameterUpdated(const PluginParameter* parameter);
 
+    void setFrequency(float inFrequency);
+    void setPhase(float inPhase);
+    void setSampleRate(double sampleRate);
+
 private:
     Waveform* waveforms[kNumWaveforms];
     Waveform* currentWaveform;

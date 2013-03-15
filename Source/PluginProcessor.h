@@ -68,7 +68,8 @@ public:
 
 private:
     PluginParameterSet parameters;
-    Oscillator oscillators[3];
+    static const int kNumOscillators = 3;
+    Oscillator oscillators[kNumOscillators];
 
 private:
     //==============================================================================

@@ -15,7 +15,7 @@
 
 class SawtoothWave : public Waveform {
 public:
-    SawtoothWave() {}
+    SawtoothWave() : Waveform() {}
     virtual ~SawtoothWave() {}
 
     void process(float* buffer, int numSamples);

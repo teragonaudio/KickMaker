@@ -15,10 +15,14 @@
 
 class NoiseWave : public Waveform {
 public:
-    NoiseWave() {}
+    NoiseWave() : Waveform(), x1(0x67452301), x2(0xefcdab89) {}
     virtual ~NoiseWave() {}
 
     void process(float* buffer, int numSamples);
+
+private:
+    int x1;
+    int x2;
 };
 
 #endif  // __NOISEWAVE_H_E40692B5__
