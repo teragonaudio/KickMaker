@@ -1,15 +1,31 @@
-build
-*.pbxuser
-*.perspectivev3
-vstsdk2.4/*
-Debug/*
-Release/*
-ipch/* 
-*.suo 
-*.user 
-*.sdf 
-.DS_Store
-xcuserdata
-project.xcworkspace
+# Temporary files
+*.swp
+*~
+*.o
+*.so
 
+# Build products
+Builds/Linux/build/*
+
+# Stuff from various IDE's
+*.perspectivev3
+*.pbxuser
+*.user
+*.sdf
+*.opensdf
+*.suo
+cscope.out
+
+# Third-party libraries
 Third-Party/vstsdk2.4/*
+
+# Vim helpers
+tags
+cscope.out
+
+# CMake
+CMakeCache.txt
+CMakeFiles
+Makefile
+Makefile.in
+*.cmake
