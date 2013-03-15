@@ -62,7 +62,7 @@ KickMakerAudioProcessor::KickMakerAudioProcessor()
     addOscParameter(new FloatParameter("Osc 2 Sustain Amp", 0.0, 1.0, 0.145), kTypeOscSustainAmp, parameters, osc2Params);
     addOscParameter(new FloatParameter("Osc 2 Release", kMinAdsr, kMaxAdsr, 0.5), kTypeOscRelease, parameters, osc2Params);
     addOscParameter(new DecibelParameter("Osc 2 Volume", -60.0, 0.0, 0.0), kTypeOscVolume, parameters, osc2Params);
-    oscillators[1].observeParameters(osc1Params);
+    oscillators[1].observeParameters(osc2Params);
 
     PluginParameterSet osc3Params;
     addOscParameter(new BooleanParameter("Osc 3 On", true), kTypeOscOn, parameters, osc3Params);
@@ -80,7 +80,7 @@ KickMakerAudioProcessor::KickMakerAudioProcessor()
     addOscParameter(new FloatParameter("Osc 3 Sustain Amp", 0.0, 1.0, 0.145), kTypeOscSustainAmp, parameters, osc3Params);
     addOscParameter(new FloatParameter("Osc 3 Release", kMinAdsr, kMaxAdsr, 0.5), kTypeOscRelease, parameters, osc3Params);
     addOscParameter(new DecibelParameter("Osc 3 Volume", -60.0, 0.0, 0.0), kTypeOscVolume, parameters, osc3Params);
-    oscillators[2].observeParameters(osc1Params);
+    oscillators[2].observeParameters(osc3Params);
 
     parameters.add(new FloatParameter("Compressor Attack", 0.0, 10.0, 0.0));
     parameters.add(new FloatParameter("Compressor Release", 0.0, 50.0, 0.0));
