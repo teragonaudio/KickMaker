@@ -59,24 +59,41 @@ void Oscillator::onParameterUpdated(const PluginParameter* parameter)
         case kTypeOscPhase:
             break;
         case kTypeOscAttack:
+            adsrEnvelope.setAttack(parameter->getValue());
             break;
         case kTypeOscAttackAmp:
+            adsrEnvelope.setAttackAmp(parameter->getValue());
             break;
         case kTypeOscDecay:
+            adsrEnvelope.setDecay(parameter->getValue());
             break;
         case kTypeOscDecayAmp:
+            adsrEnvelope.setDecayAmp(parameter->getValue());
             break;
         case kTypeOscSustain:
+            adsrEnvelope.setSustain(parameter->getValue());
             break;
         case kTypeOscSustainAmp:
+            adsrEnvelope.setSustainAmp(parameter->getValue());
             break;
         case kTypeOscRelease:
+            adsrEnvelope.setRelease(parameter->getValue());
             break;
         case kTypeOscVolume:
+            gain = parameter->getValue();
             break;
         default:
-            volume = parameter->getValue();
             break;
+    }
+}
+
+void Oscillator::process(float* buffer, int numSamples)
+{
+    currentWaveform->process(buffer, numSamples);
+    adsrEnvelope.process(buffer, numSamples);
+
+    for(int i = 0; i < numSamples; ++i) {
+        buffer[i] *= gain;
     }
 }
 
@@ -99,5 +116,7 @@ void Oscillator::setSampleRate(double inSampleRate)
     for(int i = 0; i < kNumWaveforms; ++i) {
         waveforms[i]->setSampleRate(inSampleRate);
     }
+
+    adsrEnvelope.setSampleRate(inSampleRate);
 }
 

@@ -55,8 +55,10 @@ public:
 private:
     Waveform* waveforms[kNumWaveforms];
     Waveform* currentWaveform;
+    AdsrEnvelope adsrEnvelope;
+
     bool enabled;
-    float volume;
+    float gain;
 };
 
 #endif  // __OSCILLATOR_H_A19FA352__
