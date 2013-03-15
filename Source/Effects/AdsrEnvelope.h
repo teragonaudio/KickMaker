@@ -15,7 +15,7 @@
 
 class AdsrEnvelope : public BufferProcessor {
 public:
-    AdsrEnvelope() {}
+    AdsrEnvelope() : BufferProcessor() {}
     virtual ~AdsrEnvelope() {}
 
     int getLength() const;
