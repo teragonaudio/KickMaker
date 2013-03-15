@@ -12,6 +12,7 @@
 #define __PLUGINPROCESSOR_H_C7A4E721__
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "Oscillator.h"
 #include "PluginParameters.h"
 
 using namespace teragon;
@@ -67,6 +68,7 @@ public:
 
 private:
     PluginParameterSet parameters;
+    Oscillator oscillators[3];
 
 private:
     //==============================================================================

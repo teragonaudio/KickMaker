@@ -16,55 +16,71 @@ static const double kMaxAdsr = 0.5;
 static const double kMinAdsr = 0.01;
 
 //==============================================================================
+static void addOscParameter(PluginParameter *parameter, int parameterType,
+                            PluginParameterSet& parameters, PluginParameterSet& oscParameterSet)
+{
+    parameter->setType(parameterType);
+    parameters.add(parameter);
+    oscParameterSet.add(parameter);
+}
+
 KickMakerAudioProcessor::KickMakerAudioProcessor()
 {
-    parameters.add(new BooleanParameter("Osc 1 On", true));
-    parameters.add(new IntegerParameter("Osc 1 Type", 0, 4, 0));
-    parameters.add(new FloatParameter("Osc 1 Detune", -40.0, 40.0, 0.0));
-    parameters.add(new FloatParameter("Osc 1 Detune Fine", -1.0, 1.0, 0.0));
-    parameters.add(new IntegerParameter("Osc 1 Expand", 0, 100, 0));
-    parameters.add(new FloatParameter("Osc 1 Expand Rate", 1.0, 100.0, 1.0));
-    parameters.add(new FloatParameter("Osc 1 Phase", 0.0, kMaxPhase, 0.0));
-    parameters.add(new FloatParameter("Osc 1 Attack", kMinAdsr, kMaxAdsr, 0.05));
-    parameters.add(new FloatParameter("Osc 1 Attack Amp", 0.0, 1.0, 0.84));
-    parameters.add(new FloatParameter("Osc 1 Decay", kMinAdsr, kMaxAdsr, 0.5));
-    parameters.add(new FloatParameter("Osc 1 Decay Amp", 0.0, 1.0, 0.475));
-    parameters.add(new FloatParameter("Osc 1 Sustain", kMinAdsr, kMaxAdsr, 0.25));
-    parameters.add(new FloatParameter("Osc 1 Sustain Amp", 0.0, 1.0, 0.145));
-    parameters.add(new FloatParameter("Osc 1 Release", kMinAdsr, kMaxAdsr, 0.5));
-    parameters.add(new DecibelParameter("Osc 1 Volume", -60.0, 0.0, 0.0));
+    PluginParameter *p;
 
-    parameters.add(new BooleanParameter("Osc 2 On", false));
-    parameters.add(new IntegerParameter("Osc 2 Type", 0, 4, 0));
-    parameters.add(new FloatParameter("Osc 2 Detune", -40.0, 40.0, 0.0));
-    parameters.add(new FloatParameter("Osc 2 Detune Fine", -1.0, 1.0, 0.0));
-    parameters.add(new IntegerParameter("Osc 2 Expand", 0, 100, 0));
-    parameters.add(new FloatParameter("Osc 2 Expand Rate", 1.0, 100.0, 1.0));
-    parameters.add(new FloatParameter("Osc 2 Phase", 0.0, kMaxPhase, 0.0));
-    parameters.add(new FloatParameter("Osc 2 Attack", kMinAdsr, kMaxAdsr, 0.05));
-    parameters.add(new FloatParameter("Osc 2 Attack Amp", 0.0, 1.0, 0.84));
-    parameters.add(new FloatParameter("Osc 2 Decay", kMinAdsr, kMaxAdsr, 0.5));
-    parameters.add(new FloatParameter("Osc 2 Decay Amp", 0.0, 1.0, 0.475));
-    parameters.add(new FloatParameter("Osc 2 Sustain", kMinAdsr, kMaxAdsr, 0.25));
-    parameters.add(new FloatParameter("Osc 2 Sustain Amp", 0.0, 1.0, 0.145));
-    parameters.add(new FloatParameter("Osc 2 Release", kMinAdsr, kMaxAdsr, 0.5));
-    parameters.add(new DecibelParameter("Osc 2 Volume", -60.0, 0.0, 0.0));
+    PluginParameterSet osc1Params;
+    addOscParameter(new BooleanParameter("Osc 1 On", true), kTypeOscOn, parameters, osc1Params);
+    addOscParameter(new IntegerParameter("Osc 1 Type", 0, kNumWaveforms - 1, 0), kTypeOscType, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Detune", -40.0, 40.0, 0.0), kTypeOscDetune, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Detune Fine", -1.0, 1.0, 0.0), kTypeOscDetuneFine, parameters, osc1Params);
+    addOscParameter(new IntegerParameter("Osc 1 Expand", 0, 100, 0), kTypeOscExpand, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Expand Rate", 1.0, 100.0, 1.0), kTypeOscExpandRate, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Phase", 0.0, kMaxPhase, 0.0), kTypeOscPhase, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Attack", kMinAdsr, kMaxAdsr, 0.05), kTypeOscAttack, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Attack Amp", 0.0, 1.0, 0.84), kTypeOscAttackAmp, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Decay", kMinAdsr, kMaxAdsr, 0.5), kTypeOscDecay, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Decay Amp", 0.0, 1.0, 0.475), kTypeOscDecayAmp, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Sustain", kMinAdsr, kMaxAdsr, 0.25), kTypeOscSustain, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Sustain Amp", 0.0, 1.0, 0.145), kTypeOscSustainAmp, parameters, osc1Params);
+    addOscParameter(new FloatParameter("Osc 1 Release", kMinAdsr, kMaxAdsr, 0.5), kTypeOscRelease, parameters, osc1Params);
+    addOscParameter(new DecibelParameter("Osc 1 Volume", -60.0, 0.0, 0.0), kTypeOscVolume, parameters, osc1Params);
+    oscillators[0].observeParameters(osc1Params);
 
-    parameters.add(new BooleanParameter("Osc 3 On", false));
-    parameters.add(new IntegerParameter("Osc 3 Type", 0, 4, 0));
-    parameters.add(new FloatParameter("Osc 3 Detune", -40.0, 40.0, 0.0));
-    parameters.add(new FloatParameter("Osc 3 Detune Fine", -1.0, 1.0, 0.0));
-    parameters.add(new IntegerParameter("Osc 3 Expand", 0, 100, 0));
-    parameters.add(new FloatParameter("Osc 3 Expand Rate", 1.0, 100.0, 1.0));
-    parameters.add(new FloatParameter("Osc 3 Phase", 0.0, kMaxPhase, 0.0));
-    parameters.add(new FloatParameter("Osc 3 Attack", kMinAdsr, kMaxAdsr, 0.05));
-    parameters.add(new FloatParameter("Osc 3 Attack Amp", 0.0, 1.0, 0.84));
-    parameters.add(new FloatParameter("Osc 3 Decay", kMinAdsr, kMaxAdsr, 0.5));
-    parameters.add(new FloatParameter("Osc 3 Decay Amp", 0.0, 1.0, 0.475));
-    parameters.add(new FloatParameter("Osc 3 Sustain", kMinAdsr, kMaxAdsr, 0.25));
-    parameters.add(new FloatParameter("Osc 3 Sustain Amp", 0.0, 1.0, 0.145));
-    parameters.add(new FloatParameter("Osc 3 Release", kMinAdsr, kMaxAdsr, 0.5));
-    parameters.add(new DecibelParameter("Osc 3 Volume", -60.0, 0.0, 0.0));
+    PluginParameterSet osc2Params;
+    addOscParameter(new BooleanParameter("Osc 2 On", true), kTypeOscOn, parameters, osc2Params);
+    addOscParameter(new IntegerParameter("Osc 2 Type", 0, kNumWaveforms - 1, 0), kTypeOscType, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Detune", -40.0, 40.0, 0.0), kTypeOscDetune, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Detune Fine", -1.0, 1.0, 0.0), kTypeOscDetuneFine, parameters, osc2Params);
+    addOscParameter(new IntegerParameter("Osc 2 Expand", 0, 100, 0), kTypeOscExpand, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Expand Rate", 1.0, 100.0, 1.0), kTypeOscExpandRate, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Phase", 0.0, kMaxPhase, 0.0), kTypeOscPhase, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Attack", kMinAdsr, kMaxAdsr, 0.05), kTypeOscAttack, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Attack Amp", 0.0, 1.0, 0.84), kTypeOscAttackAmp, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Decay", kMinAdsr, kMaxAdsr, 0.5), kTypeOscDecay, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Decay Amp", 0.0, 1.0, 0.475), kTypeOscDecayAmp, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Sustain", kMinAdsr, kMaxAdsr, 0.25), kTypeOscSustain, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Sustain Amp", 0.0, 1.0, 0.145), kTypeOscSustainAmp, parameters, osc2Params);
+    addOscParameter(new FloatParameter("Osc 2 Release", kMinAdsr, kMaxAdsr, 0.5), kTypeOscRelease, parameters, osc2Params);
+    addOscParameter(new DecibelParameter("Osc 2 Volume", -60.0, 0.0, 0.0), kTypeOscVolume, parameters, osc2Params);
+    oscillators[1].observeParameters(osc1Params);
+
+    PluginParameterSet osc3Params;
+    addOscParameter(new BooleanParameter("Osc 3 On", true), kTypeOscOn, parameters, osc3Params);
+    addOscParameter(new IntegerParameter("Osc 3 Type", 0, kNumWaveforms - 1, 0), kTypeOscType, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Detune", -40.0, 40.0, 0.0), kTypeOscDetune, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Detune Fine", -1.0, 1.0, 0.0), kTypeOscDetuneFine, parameters, osc3Params);
+    addOscParameter(new IntegerParameter("Osc 3 Expand", 0, 100, 0), kTypeOscExpand, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Expand Rate", 1.0, 100.0, 1.0), kTypeOscExpandRate, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Phase", 0.0, kMaxPhase, 0.0), kTypeOscPhase, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Attack", kMinAdsr, kMaxAdsr, 0.05), kTypeOscAttack, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Attack Amp", 0.0, 1.0, 0.84), kTypeOscAttackAmp, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Decay", kMinAdsr, kMaxAdsr, 0.5), kTypeOscDecay, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Decay Amp", 0.0, 1.0, 0.475), kTypeOscDecayAmp, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Sustain", kMinAdsr, kMaxAdsr, 0.25), kTypeOscSustain, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Sustain Amp", 0.0, 1.0, 0.145), kTypeOscSustainAmp, parameters, osc3Params);
+    addOscParameter(new FloatParameter("Osc 3 Release", kMinAdsr, kMaxAdsr, 0.5), kTypeOscRelease, parameters, osc3Params);
+    addOscParameter(new DecibelParameter("Osc 3 Volume", -60.0, 0.0, 0.0), kTypeOscVolume, parameters, osc3Params);
+    oscillators[2].observeParameters(osc1Params);
 
     parameters.add(new FloatParameter("Compressor Attack", 0.0, 10.0, 0.0));
     parameters.add(new FloatParameter("Compressor Release", 0.0, 50.0, 0.0));
