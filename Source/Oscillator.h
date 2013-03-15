@@ -49,11 +49,13 @@ public:
 
     void process(float* buffer, int numSamples);
 
-    void setFrequency(float inFrequency);
+    void setNoteOn(int note, int velocity);
+    void setNoteOff();
     void setPhase(float inPhase);
     void setSampleRate(double sampleRate);
 
 private:
+    FrequencyCalculator frequencyCalculator;
     Waveform* waveforms[kNumWaveforms];
     Waveform* currentWaveform;
     AdsrEnvelope adsrEnvelope;

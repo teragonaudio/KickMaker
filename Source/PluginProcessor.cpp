@@ -120,13 +120,35 @@ void KickMakerAudioProcessor::releaseResources()
 
 void KickMakerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
 {
+    MidiBuffer::Iterator midiIterator(midiMessages);
+    MidiMessage midiMessage;
+    int samplePosition = 0;
+    while(midiIterator.getNextEvent(midiMessage, samplePosition)) {
+        if(midiMessage.isNoteOff()) {
+            for(int i = 0; i < kNumOscillators; ++i) {
+                oscillators[i].setNoteOff();
+            }
+        }
+        else if(midiMessage.isNoteOn()) {
+            for(int i = 0; i < kNumOscillators; ++i) {
+                oscillators[i].setNoteOn(midiMessage.getRawData()[1], midiMessage.getRawData()[2]);
+            }
+        }
+        else {
+            // Ignore
+        }
+    }
+
     // This is the place where you'd normally do the guts of your plugin's
     // audio processing...
     for (int channel = 0; channel < getNumInputChannels(); ++channel)
     {
         float* channelData = buffer.getSampleData(channel);
-
-        // ..do something to the data...
+        for(int i = 0; i < kNumOscillators; ++i) {
+            oscillators[i].process(channelData, buffer.getNumSamples());
+        }
+        adsrEnvelope.process(channelData, buffer.getNumSamples());
+        
     }
 
     // In case we have more outputs than inputs, we'll clear any output

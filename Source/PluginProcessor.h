@@ -12,8 +12,13 @@
 #define __PLUGINPROCESSOR_H_C7A4E721__
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "Oscillator.h"
 #include "PluginParameters.h"
+#include "Oscillator.h"
+#include "Effects/AdsrEnvelope.h"
+#include "Effects/Compressor.h"
+#include "Effects/LopassFilter.h"
+#include "Effects/WaveSmoother.h"
+
 
 using namespace teragon;
 
@@ -70,6 +75,7 @@ private:
     PluginParameterSet parameters;
     static const int kNumOscillators = 3;
     Oscillator oscillators[kNumOscillators];
+    AdsrEnvelope adsrEnvelope;
 
 private:
     //==============================================================================
